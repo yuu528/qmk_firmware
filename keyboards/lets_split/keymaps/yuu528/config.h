@@ -20,8 +20,14 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #pragma once
 
+#undef MANUFACTURER
+#undef PRODUCT
+
 #define MASTER_LEFT
 
-/* Software Features */
-/* Auto Shift */
+#define MANUFACTURER "yuu528"
+#define PRODUCT "Yuu528's Let's Split"
+
+#define FORCE_NKRO
+
 #define AUTO_SHIFT_TIMEOUT 150
