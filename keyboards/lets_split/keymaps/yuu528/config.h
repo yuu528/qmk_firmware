@@ -34,3 +34,5 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #undef RGBLIGHT_NUM
 #define RGBLIGHT_NUM 10
 #define RGBLIGHT_SLEEP
+
+#define DEBOUNCE 5
