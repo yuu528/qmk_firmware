@@ -35,4 +35,4 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define RGBLIGHT_NUM 10
 #define RGBLIGHT_SLEEP
 
-#define DEBOUNCE 10
+#define DEBOUNCE 15
