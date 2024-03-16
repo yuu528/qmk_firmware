@@ -29,6 +29,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #define FORCE_NKRO
 
+#define EE_HANDS
+
 #define AUTO_SHIFT_TIMEOUT 150
 
 #undef RGBLIGHT_NUM
