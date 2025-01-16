@@ -80,7 +80,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * |------+------+------+------+------+-------------+------+------+------+------+------|
      * |      |      |      |      |      |      |      | PrtSc |Pause | Ins |      |AS Tog|
      * |------+------+------+------+------+------|------+------+------+------+------+------|
-     * |      |RGBTog|RGBHue|RGBSat|RGBVal|RGBMod| RMB  |      |WheelL|WheelD|WheelU|WheelR|
+     * |      |UG Tog|UG Hue|UG Sat|UG Val|UGMode| RMB  |      |WheelL|WheelD|WheelU|WheelR|
      * |------+------+------+------+------+------+------+------+------+------+------+------|
      * |      |      |      |      |      |      | LMB  |      |MouseL|MouseD|MouseU|MouseR|
      * `-----------------------------------------------------------------------------------'
@@ -88,7 +88,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_ADJUST] =  LAYOUT_ortho_4x12(
         _______, QK_BOOT, _______, _______, _______, KC_SLEP, _______, _______, _______, _______, _______,  KC_DEL,
         _______, _______, _______, _______, _______, _______, _______, KC_PSCR, KC_PAUS, KC_INS,  _______, AS_TOGG,
-        _______, RGB_TOG, RGB_HUI, RGB_SAI, RGB_VAI, RGB_MOD, KC_BTN2, _______, KC_WH_L, KC_WH_D, KC_WH_U, KC_WH_R,
+        _______, UG_TOGG, UG_HUEU, UG_SATU, UG_VALU, UG_NEXT, KC_BTN2, _______, KC_WH_L, KC_WH_D, KC_WH_U, KC_WH_R,
         _______, _______, _______, _______, _______, _______, KC_BTN1, _______, KC_MS_L, KC_MS_D, KC_MS_U, KC_MS_R
     )
 };
