@@ -14,7 +14,8 @@ enum layer_names {
 };
 
 enum custom_keycodes {
-    QWERTY = SAFE_RANGE
+    QWERTY = SAFE_RANGE,
+    CK_TOGJ     // Toggle JIS mode
 };
 
 #define LOWER  LT(_LOWER, JP_MHEN)
@@ -81,7 +82,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * ,-----------------------------------------------------------------------------------.
      * |      | Boot |      |      |      | Sleep|      |      |      |      |      |  Del |
      * |------+------+------+------+------+-------------+------+------+------+------+------|
-     * |      |      |      |      |      |      |      | PrtSc |Pause | Ins |      |      |
+     * |      |      |      |      |      |      |      | PrtSc |Pause | Ins |      |TogJIS|
      * |------+------+------+------+------+------|------+------+------+------+------+------|
      * |      |UG Tog|UG Hue|UG Sat|UG Val|UGMode| RMB  |      |WheelL|WheelD|WheelU|WheelR|
      * |------+------+------+------+------+------+------+------+------+------+------+------|
@@ -90,14 +91,28 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      */
     [_ADJUST] =  LAYOUT_ortho_4x12(
         _______, QK_BOOT, _______, _______, _______, KC_SLEP, _______, _______, _______, _______, _______,  KC_DEL,
-        _______, _______, _______, _______, _______, _______, _______, KC_PSCR, KC_PAUS, KC_INS,  _______, _______,
+        _______, _______, _______, _______, _______, _______, _______, KC_PSCR, KC_PAUS, KC_INS,  _______, CK_TOGJ,
         _______, UG_TOGG, UG_HUEU, UG_SATU, UG_VALU, UG_NEXT, KC_BTN2, _______, KC_WH_L, KC_WH_D, KC_WH_U, KC_WH_R,
         _______, _______, _______, _______, _______, _______, KC_BTN1, _______, KC_MS_L, KC_MS_D, KC_MS_U, KC_MS_R
     )
 };
 /* clang-format on */
 
-bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-    return twpair_on_jis(keycode, record);
-}
+bool jis = true;
 
+bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode) {
+        case CK_TOGJ:
+            if (record->event.pressed) {
+                jis = !jis;
+            }
+            return false;
+
+        default:
+            if (jis) {
+                return twpair_on_jis(keycode, record);
+            } else {
+                return true;
+            }
+    }
+}
