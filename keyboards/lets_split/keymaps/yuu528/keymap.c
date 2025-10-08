@@ -21,6 +21,7 @@ enum custom_keycodes {
 #define UPPER  LT(_UPPER, JP_HENK)
 #define ADJUST MO(_ADJUST)
 
+/* clang-format off */
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     /* Qwerty
      * ,-----------------------------------------------------------------------------------.
@@ -94,6 +95,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         _______, _______, _______, _______, _______, _______, KC_BTN1, _______, KC_MS_L, KC_MS_D, KC_MS_U, KC_MS_R
     )
 };
+/* clang-format on */
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     return twpair_on_jis(keycode, record);
