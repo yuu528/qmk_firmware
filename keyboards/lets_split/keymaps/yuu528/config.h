@@ -24,8 +24,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #undef MANUFACTURER
 #undef PRODUCT
-#define MANUFACTURER "yuu528"
-#define PRODUCT "Yuu528's Let's Split"
+#define MANUFACTURER "yuu"
+#define PRODUCT "Yuu's Let's Split"
 
 #define FORCE_NKRO
 
