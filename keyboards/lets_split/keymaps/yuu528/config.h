@@ -27,7 +27,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define MANUFACTURER "yuu"
 #define PRODUCT "Yuu's Let's Split"
 
-#define FORCE_NKRO
+#define NKRO_DEFAULT_ON true
 
 #define EE_HANDS
 
